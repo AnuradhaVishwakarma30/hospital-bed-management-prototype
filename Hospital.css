@@ -371,15 +371,17 @@ h2 {
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 .feature-icon {
-  color: #69db7c;
-  height: 1.6rem;
-  width: 1.6rem;
+  height: 2.5rem;
+  width: 2.5rem;
 
-  /* background-color: #b2f2bb; */
+  background-color: #fff;
   border-radius: 50%;
 
-  margin-bottom: 1.6rem;
-  padding: 0.8rem;
+  /* margin-bottom: 1.6rem; */
+  padding: 1.5rem;
+
+  transform: translate(140%, 30%);
+  color: #69db7c;
 }
 
 .feature-text {
@@ -411,27 +413,6 @@ h2 {
   margin-bottom: none;
   /* text-align: center;   */
   text-justify: center;
-}
-
-.icon::before {
-  content: "";
-  display: block;
-  width: 25%;
-
-  /* 60% of parents width */
-  padding-bottom: 25%;
-  background-color: #fff;
-
-  /* position: absolute; */
-
-  /* to make circle */
-  border-radius: 50%;
-
-  top: 30%;
-  left: 20%;
-  transform: translate(140%, 30%);
-
-  z-index: -1;
 }
 
 .carousel-container {
