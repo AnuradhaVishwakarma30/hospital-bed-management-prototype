@@ -940,3 +940,31 @@ footer {
     justify-content: center; /* Center social icons */
   }
 }
+
+/* ================================== */
+/* RESPONSIVE DESIGN          */
+/* ================================== */
+
+/* This code applies to all screens SMALLER than 768px (phones) */
+@media (max-width: 768px) {
+  /* Example: Make your 3-column testimonial grid stack into 1 column */
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Example: Make your CTA text and image stack */
+  .split-cta-container {
+    flex-direction: column;
+  }
+
+  /* Example: Make your footer columns stack into 1 column */
+  .enhanced-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Example: Make your titles smaller */
+  .split-cta-title {
+    font-size: 28px;
+  }
+}
