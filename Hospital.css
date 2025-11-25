@@ -12,11 +12,13 @@ body {
   color: #343a40;
   /* border-bottom: 8px solid #087f5b; */
   line-height: 1;
+  overflow-x: hidden;
 }
 
 html {
   font-family: "Rubik", sans-serif;
   color: #444;
+  /* font-size: 62.5%; */
 }
 
 .logo {
@@ -60,13 +62,14 @@ nav {
 
 /* for aligning the navigation part after aplying After changing the html class for the div class */
 .Header-container {
-  width: 1200px;
+  width: 100%;
   position: absolute;
   /* in relation with parent size */
   left: 50%;
   top: 50%;
   /* in relation with element size */
   transform: translate(-50%, -50%);
+  padding: 4.8rem;
   /* background-color: violet; */
 
   /* text-align: center; */
@@ -370,6 +373,7 @@ h2 {
   text-align: center;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
+
 .feature-icon {
   height: 2.5rem;
   width: 2.5rem;
@@ -383,7 +387,6 @@ h2 {
   transform: translate(140%, 30%);
   color: #69db7c;
 }
-
 .feature-text {
   /* font-size: 1.1rem; */
   line-height: 1.6;
@@ -477,6 +480,7 @@ h2 {
 }
 
 /* --- Your Original Text Styles (Unchanged) --- */
+
 .testimonial-text {
   font-size: 18px;
   font-weight: 300;
@@ -567,41 +571,6 @@ h2 {
 }
 
 /* --- Responsive Design --- */
-@media (max-width: 768px) {
-  .testimonial-slide {
-    /* Stack image on top of text on smaller screens */
-    flex-direction: column;
-    gap: 24px;
-    padding: 32px 24px 48px 24px; /* Adjust padding */
-    text-align: center;
-  }
-
-  .testimonial-img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .testimonial-text {
-    font-size: 16px;
-    margin-bottom: 24px;
-  }
-
-  /* Move buttons to be more accessible on mobile */
-  .btn--left {
-    transform: translate(20%, -50%);
-    left: 0;
-  }
-
-  .btn--right {
-    transform: translate(-20%, -50%);
-    right: 0;
-  }
-
-  .dots {
-    /* Move dots up a bit */
-    transform: translate(-50%, 24px);
-  }
-}
 
 section,
 footer {
@@ -870,101 +839,4 @@ footer {
   margin-top: 60px;
   font-size: 14px;
   color: #868e96;
-}
-
-/* --- Responsive Design for new sections --- */
-@media (max-width: 992px) {
-  .split-cta-container {
-    flex-direction: column; /* Stack on smaller screens */
-    text-align: center;
-    gap: 30px;
-    padding-bottom: 40px; /* More space at bottom */
-  }
-
-  .split-cta-content {
-    padding: 40px;
-  }
-  .split-cta-content::before {
-    /* Adjust dot pattern position */
-    bottom: auto;
-    top: 30px;
-    right: 30px;
-    left: auto;
-  }
-
-  .split-cta-image {
-    height: 300px;
-    width: 100%; /* Image takes full width */
-    clip-path: none; /* Remove curve on smaller screens */
-    border-radius: 0 0 12px 12px; /* Round bottom corners of image */
-  }
-  .split-cta-container::before {
-    top: -10px;
-    left: -10px;
-  }
-
-  .split-cta-title {
-    font-size: 32px;
-  }
-
-  .enhanced-footer-grid {
-    grid-template-columns: 1fr 1fr; /* 2 columns on medium screens */
-    gap: 40px;
-  }
-  .enhanced-footer-grid .footer-col:nth-child(1) {
-    /* Force first col to span two */
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 768px) {
-  .split-cta-section {
-    padding: 60px 0;
-  }
-  .split-cta-title {
-    font-size: 28px;
-  }
-  .split-cta-text {
-    font-size: 16px;
-  }
-
-  .enhanced-footer-grid {
-    grid-template-columns: 1fr; /* Stack all columns on small screens */
-    text-align: center;
-  }
-  .enhanced-footer-grid .footer-col:nth-child(1) {
-    /* Reset span */
-    grid-column: auto;
-  }
-  .social-icons {
-    justify-content: center; /* Center social icons */
-  }
-}
-
-/* ================================== */
-/* RESPONSIVE DESIGN          */
-/* ================================== */
-
-/* This code applies to all screens SMALLER than 768px (phones) */
-@media (max-width: 768px) {
-  /* Example: Make your 3-column testimonial grid stack into 1 column */
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* Example: Make your CTA text and image stack */
-  .split-cta-container {
-    flex-direction: column;
-  }
-
-  /* Example: Make your footer columns stack into 1 column */
-  .enhanced-footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Example: Make your titles smaller */
-  .split-cta-title {
-    font-size: 28px;
-  }
 }

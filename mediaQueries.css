@@ -1,0 +1,355 @@
+/* ====================================================== */
+/*          MEDIA QUERIES FOR RESPONSIVE DESIGN           */
+/* ====================================================== */
+
+/* -------------------------------------------------------------------------- */
+/*  1. BELOW 1200px (Desktop shrinking, some tablets)                        */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 75em) {
+  /* 1200px / 16px = 75em */
+  /* Main Container Adjustment */
+  .container {
+    max-width: 70rem;
+    padding: 0 3.2rem;
+  }
+
+  /* FEATURES GRID ICON FIX */
+  .gridcols {
+    text-align: center; /* Center the entire box content */
+  }
+
+  .feature-icon {
+    /* Reset complex translation and center horizontally */
+    transform: translate(90%, 30%);
+    /* margin: 0 auto 1.6rem auto; */
+    /* Center it and add bottom margin */
+    display: block;
+  }
+
+  .feature-text {
+    text-align: center; /* Ensure the description is also centered */
+    /* font-size: 0.8rem; */
+    text-align: justify;
+  }
+
+  html {
+    font-size: 12px; /* 9px instead of 10px, scaling everything down */
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  2. BELOW 944px (Tablets)                                                 */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 59em) {
+  /* 944px / 16px = 59em */
+  /* Re-adjusting the base font size */
+  html {
+    font-size: 50%; /* 8px instead of 10px, scaling everything down */
+  }
+
+  /*  HERO SECTION FIX: Reduce the height on tablets */
+  .header {
+    height: 70vh; /* Shorter height on tablets */
+    padding-bottom: 9.6rem;
+  }
+
+  .Header-container {
+    width: 90%;
+    top: 55%;
+    padding: 3.2rem;
+  }
+
+  /* GRIDS (e.g., How It Works) */
+  .grid--2--cols {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Stack columns vertically for tablets */
+  }
+
+  .grid--3--cols,
+  .grid--4--cols {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 2 columns for smaller grid sections */
+    row-gap: 6.4rem;
+  }
+
+  /* HOW IT WORKS SECTION */
+  .step-img-box:nth-child(2) {
+    /* For the second image, reset the order for better flow on tablets */
+    grid-row: 2;
+  }
+
+  .split-cta-image {
+    height: 300px;
+  }
+  /* TESTIMONIAL CAROUSEL */
+  .testimonial-slide {
+    flex-direction: column; /* Stack image and text */
+    text-align: center;
+    gap: 3.2rem;
+    padding: 4.8rem 4.8rem 6.4rem 4.8rem;
+  }
+
+  .testimonial-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* CTA SECTION */
+  .split-cta-container {
+    /* flex-direction: column; हटा दिया गया */
+    gap: 20px; /* गैप कम करें */
+    padding: 2.4rem; /* कंटेनर के अंदर पैडिंग जोड़ें ताकि किनारों पर जगह मिल सके */
+  }
+
+  .split-cta-content {
+    flex: 1; /* यह पहले से 1 है, इसे 1 पर ही रहने दें */
+    padding: 3.2rem 2.4rem; /* कंटेंट पैडिंग कम करें */
+    order: 1; /* टेक्स्ट को पहले रखें */
+  }
+
+  .split-cta-title {
+    font-size: 3rem; /* टाइटल छोटा करें */
+  }
+
+  .split-cta-image {
+    flex: 1; /* यह पहले से 1 है, इसे 1 पर ही रहने दें */
+    height: 350px; /* हाइट एडजस्ट करें */
+    border-radius: 0 12px 12px 0; /* Corner radius बनाए रखें */
+    order: 2; /* इमेज को बाद में रखें */
+  }
+  /* ... अन्य CSS ... */
+
+  /* FOOTER */
+  .enhanced-footer-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns in the footer */
+    row-gap: 4.8rem;
+  }
+
+  .footer-logo-col {
+    grid-column: 1 / -1; /* Make logo column full width */
+  }
+
+  .enhanced-footer::before {
+    display: none; /* Hide decorative curve */
+  }
+
+  /* FEATURES GRID ICON FIX */
+  .gridcols {
+    text-align: center; /* Center the entire box content */
+  }
+
+  .feature-icon {
+    /* Reset complex translation and center horizontally */
+    transform: translate(100%, 30%);
+    /* margin: 0 auto 1.6rem auto; */
+    /* Center it and add bottom margin */
+    display: block;
+  }
+
+  .feature-text {
+    text-align: center; /* Ensure the description is also centered */
+  }
+
+  .Secondary-heading {
+    font-size: 3.6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  3. BELOW 544px (Small Tablets & Mobile Phones)                            */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 34em) {
+  /* 544px / 16px = 34em */
+
+  /*  HERO SECTION FIX: Reduce the height further on mobile */
+
+  .grid {
+    row-gap: 4.8rem;
+  }
+  .grid--2--cols,
+  .grid--3--cols,
+  .grid--4--cols {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+  }
+  .header {
+    height: 60vh; /* Even shorter height on mobile */
+  }
+
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+    /* For the second image, reset the order for better flow on mobile */
+  }
+
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+    /* For the second image, reset the order for better flow on mobile */
+  }
+
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+
+  /* HEADER & NAVIGATION */
+  .logo {
+    padding: 0 1.2rem;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    padding-top: 2.4rem;
+  }
+  .Header-container {
+    top: 60%;
+    padding: 2.4rem;
+  }
+
+  /* Buttons */
+  .btn:link,
+  .btn:visited {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.1rem;
+  }
+
+  /* Grids */
+  .grid--3--cols,
+  .grid--4--cols {
+    grid-template-columns: 1fr; /* Single column for all feature/content grids */
+  }
+
+  /* CTA SECTION
+  .split-cta-content {
+    padding: 3.2rem;
+  }
+  .split-cta-title {
+    font-size: 3.2rem;
+  } */
+
+  .split-cta-image {
+    /* Further reduce image height */
+  }
+
+  /* 🌟 CTA Stacking for Mobile FIX 🌟 */
+  .split-cta-container {
+    flex-direction: column; /* मोबाइल पर वापस स्टैक करें */
+    gap: 0;
+    padding: 0;
+  }
+
+  .split-cta-content {
+    order: 2;
+    padding: 3.2rem; /* मोबाइल के लिए पैडिंग एडजस्ट करें */
+  }
+
+  .split-cta-image {
+    order: 1;
+    height: 0;
+    border-radius: 12px 12px 0 0;
+  }
+
+  /* CAROUSEL CONTROLS */
+  .btn--left,
+  .btn--right {
+    top: auto;
+    bottom: 0;
+    transform: translate(0, 50%); /* Move buttons below carousel */
+  }
+  .btn--left {
+    left: 20%;
+    transform: translateX(-50%);
+  }
+  .btn--right {
+    right: 20%;
+    transform: translateX(50%);
+  }
+  .dots {
+    display: none; /* Hide dots on very small screens for clean look */
+  }
+
+  /* FOOTER */
+  .enhanced-footer-grid {
+    grid-template-columns: 1fr; /* Stack all footer columns */
+    padding: 0 3.2rem;
+  }
+  .footer-logo-col,
+  .footer-col h3 {
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .footer-links-list,
+  .footer-contact-list {
+    text-align: center;
+  }
+
+  /* FEATURES GRID ICON FIX */
+  .gridcols {
+    text-align: center; /* Center the entire box content */
+  }
+
+  .feature-icon {
+    /* Reset complex translation and center horizontally */
+    transform: translate(300%, 30%);
+    /* margin: 0 auto 1.6rem auto; */
+    /* Center it and add bottom margin */
+    display: block;
+  }
+
+  .feature-text {
+    text-align: center; /* Ensure the description is also centered */
+  }
+
+  .Secondary-heading {
+    font-size: 3.6rem;
+  }
+}
+
+@media (max-width: 27em) {
+  /* FEATURES GRID ICON FIX */
+  .gridcols {
+    text-align: center; /* Center the entire box content */
+  }
+
+  .feature-icon {
+    /* Reset complex translation and center horizontally */
+    transform: translate(260%, 30%);
+    /* margin: 0 auto 1.6rem auto; */
+    /* Center it and add bottom margin */
+    display: block;
+  }
+
+  .feature-text {
+    text-align: center; /* Ensure the description is also centered */
+  }
+}
+
+@media (max-width: 20em) {
+  /* FEATURES GRID ICON FIX */
+  .gridcols {
+    text-align: center; /* Center the entire box content */
+  }
+
+  .feature-icon {
+    /* Reset complex translation and center horizontally */
+    transform: translate(210%, 30%);
+    /* margin: 0 auto 1.6rem auto; */
+    /* Center it and add bottom margin */
+    display: block;
+  }
+
+  .feature-text {
+    text-align: center; /* Ensure the description is also centered */
+  }
+  .Secondary-heading {
+    font-size: 3.6rem;
+  }
+}
