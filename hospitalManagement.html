@@ -56,12 +56,12 @@
         color: white;
         border-radius: 0.5rem;
         transition: background-color 0.3s;
-        width: 100%; /* Full width on mobile cards look better */
+        width: 100%;
       }
       @media (min-width: 640px) {
         .bed-action-button,
         .view-patient-button {
-          width: auto; /* Auto width on desktop */
+          width: auto;
         }
       }
 
@@ -228,6 +228,7 @@
                   <i
                     data-feather="bell"
                     class="text-gray-600 w-5 h-5 md:w-6 md:h-6"
+                    data-role="Nurse,Doctor,Admin"
                   ></i>
                   <span
                     id="header-alert-dot"
@@ -895,14 +896,20 @@
           text: "Admin Panel",
           icon: "settings",
           view: "admin-view",
-          roles: "Admin",
+          roles: "Admin", // STRICTLY Admin only
         },
       ];
 
       function renderNavigation() {
+        // FILTER: Only show links allowed for the current user
+        const visibleLinks = navLinksData.filter((link) => {
+          const allowedRoles = link.roles.split(",");
+          return allowedRoles.includes(currentUserRole);
+        });
+
         const generateLink = (link) => {
           return `
-            <a class="nav-link flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+            <a class="nav-link flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600" 
                href="#" data-view="${link.view}" data-role="${link.roles}">
                <i data-feather="${link.icon}"></i>
                <span class="ml-3">${link.text}</span>
@@ -916,7 +923,7 @@
             </a>`;
         };
 
-        const linksHtml = navLinksData.map(generateLink).join("");
+        const linksHtml = visibleLinks.map(generateLink).join("");
         desktopNav.innerHTML = linksHtml;
         mobileNav.innerHTML = linksHtml;
 
@@ -1035,11 +1042,13 @@
           const priority = patient ? patient.priority : null;
           const styles = getBedStatusStyles(bed.status, priority);
           let patientName = "&nbsp;";
+          // AMBULANCE RESTRICTION: Do not show patient name
           if (patient && !isAmbulance) patientName = `Patient: ${patient.name}`;
           let statusText = bed.status.replace("_", " ");
           if (bed.status === "OCCUPIED" && priority) statusText = priority;
 
           let buttonsHTML = "";
+          // AMBULANCE RESTRICTION: Do not show Action Buttons
           if (!isAmbulance) {
             if (bed.status === "OCCUPIED") {
               buttonsHTML += `<button class="view-patient-button w-full" data-patient-id="${bed.patientId}" data-role="Nurse,Doctor,Admin">View Patient</button>`;

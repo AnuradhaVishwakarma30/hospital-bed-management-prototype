@@ -102,28 +102,26 @@
 
   /* CTA SECTION */
   .split-cta-container {
-    /* flex-direction: column; हटा दिया गया */
-    gap: 20px; /* गैप कम करें */
-    padding: 2.4rem; /* कंटेनर के अंदर पैडिंग जोड़ें ताकि किनारों पर जगह मिल सके */
+    gap: 20px;
+    padding: 2.4rem;
   }
 
   .split-cta-content {
-    flex: 1; /* यह पहले से 1 है, इसे 1 पर ही रहने दें */
-    padding: 3.2rem 2.4rem; /* कंटेंट पैडिंग कम करें */
-    order: 1; /* टेक्स्ट को पहले रखें */
+    flex: 1;
+    padding: 3.2rem 2.4rem;
+    order: 1;
   }
 
   .split-cta-title {
-    font-size: 3rem; /* टाइटल छोटा करें */
+    font-size: 3rem;
   }
 
   .split-cta-image {
-    flex: 1; /* यह पहले से 1 है, इसे 1 पर ही रहने दें */
-    height: 350px; /* हाइट एडजस्ट करें */
-    border-radius: 0 12px 12px 0; /* Corner radius बनाए रखें */
-    order: 2; /* इमेज को बाद में रखें */
+    flex: 1;
+    height: 350px;
+    border-radius: 0 12px 12px 0;
+    order: 2;
   }
-  /* ... अन्य CSS ... */
 
   /* FOOTER */
   .enhanced-footer-grid {
@@ -224,14 +222,6 @@
   .grid--4--cols {
     grid-template-columns: 1fr; /* Single column for all feature/content grids */
   }
-
-  /* CTA SECTION
-  .split-cta-content {
-    padding: 3.2rem;
-  }
-  .split-cta-title {
-    font-size: 3.2rem;
-  } */
 
   .split-cta-image {
     /* Further reduce image height */
